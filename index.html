@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> simple Webpage shshin </title>
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="script/script.js"></script>
+	
+</head>
+
+<body>
+	<div>
+	
+	<h1> VANCOUVER BUS STOP </h1>
+	<h3> (data by TransLink Open API)</h3>
+
+	<!--
+	translink embedded site 
+	<iframe src="http://www.translink.ca/Utilities/Embedded Trip Planner.aspx" scrolling="no" width="340" height="400"> </iframe>
+	-->
+
+	<input id="stopNo" type="text" value="12345 -- stop# (five digits)" 
+	onFocus="changeColorAndClear(this);"
+	onKeyUp="checkInput(this);"
+	onKeyPress="returnOnEnter(event);"/>
+
+	<input id="routeNo" type="text" value="123 -- bus# (three digits)"
+	onFocus="changeColorAndClear(this);"
+	onKeyUp="checkInput(this);"
+	onKeyPress="returnOnEnter(event);"/>
+
+	<button onclick="BusStopInfo()">
+		GET BUS STOP STAT
+	</button>
+
+	<p id = "debug"></p>
+	<p id = "stat"></p>
+	<p id = "result"></p>
+	<p id = "jsonFull"></p> <!-- this is for DEBUGGING purpose-->
+
+	</div>
+
+</body>
+
+
+</html>

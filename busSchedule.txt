@@ -1,0 +1,88 @@
+"http://api.translink.ca/rttiapi/v1/stops/50200/estimates?apikey="
+**************************************************88
+[
+{
+"RouteNo":"041",
+"RouteName":"JOYCE STN/CROWN/UBC ",
+"Direction":"EAST",
+"RouteMap":
+	{
+	"Href":"http://nb.translink.ca/geodata/041.kmz"
+	},
+"Schedules":
+	[
+	{
+	"Pattern":"EB22",
+	"Destination":"JOYCE STN",
+	"ExpectedLeaveTime":"7:21am",
+	"ExpectedCountdown":3,
+	"ScheduleStatus":"-",
+	"CancelledTrip":false,
+	"CancelledStop":false,
+	"AddedTrip":false,
+	"AddedStop":false,
+	"LastUpdate":"06:58:43 am"
+	},
+	{
+	"Pattern":"EB21",
+	"Destination":"JOYCE STN",
+	"ExpectedLeaveTime":"7:26am",
+	"ExpectedCountdown":8,
+	"ScheduleStatus":" ",
+	"CancelledTrip":false,
+	"CancelledStop":false,
+	"AddedTrip":false,
+	"AddedStop":false,
+	"LastUpdate":"06:58:32 am"
+	},
+	{
+	"Pattern":"EB21",
+	"Destination":"JOYCE STN",
+	"ExpectedLeaveTime":"7:33am",
+	"ExpectedCountdown":15,
+	"ScheduleStatus":" ",
+	"CancelledTrip":false,
+	"CancelledStop":false,
+	"AddedTrip":false,
+	"AddedStop":false,
+	"LastUpdate":"06:58:31 am"
+	},
+	{
+	"Pattern":"EB21",
+	"Destination":"JOYCE STN",
+	"ExpectedLeaveTime":"7:41am",
+	"ExpectedCountdown":23,
+	"ScheduleStatus":" ",
+	"CancelledTrip":false,
+	"CancelledStop":false,
+	"AddedTrip":false,
+	"AddedStop":false,
+	"LastUpdate":"06:58:36 am"
+	},
+	{
+	"Pattern":"EB21",
+	"Destination":"JOYCE STN",
+	"ExpectedLeaveTime":"7:48am",
+	"ExpectedCountdown":30,
+	"ScheduleStatus":" ",
+	"CancelledTrip":false,
+	"CancelledStop":false,
+	"AddedTrip":false,
+	"AddedStop":false,
+	"LastUpdate":"06:58:18 am"
+	},
+	{
+	"Pattern":"EB21",
+	"Destination":"JOYCE STN",
+	"ExpectedLeaveTime":"7:56am",
+	"ExpectedCountdown":38,
+	"ScheduleStatus":" ",
+	"CancelledTrip":false,
+	"CancelledStop":false,
+	"AddedTrip":false,
+	"AddedStop":false,
+	"LastUpdate":"06:58:09 am"
+	}
+	]
+}
+]

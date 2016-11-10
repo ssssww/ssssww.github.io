@@ -1,0 +1,53 @@
+/* css */
+
+body
+{
+	font-size: 1.8vw;
+	margin-left: 30px;
+	line-height:10%;
+}
+
+input
+{
+	color: rgb(192, 192, 192);
+}
+
+.inputChanged
+{
+	color: rgb(0 ,0, 0);
+}
+
+#stat
+{
+	font-size: 1vw;
+	font-family: sans-serif;
+}
+
+table, th, td
+{
+	line-height:90%;
+	width: 80%;
+	border: 2px solid #CCC;
+	border-collapse: collapse;
+	text-align: center;
+	table-layout: fixed;
+
+	font-size: 1.3vw;
+	font-family: sans-serif;
+}
+
+li
+{
+	font-size: 1.3vw;
+	font-family: "Courier New", Courier, monospace;
+	line-height:90%;
+}
+
+
+span
+{
+
+	//font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	color: #000944;
+}
