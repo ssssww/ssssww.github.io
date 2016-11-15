@@ -18,6 +18,9 @@
 	<h2>waste your time waiting for YOUR BUS INSIDE</h1>
 	<h3>(demo using TransLink Open API)</h3>
 
+	<footer>
+	"Some of the data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service."
+	</footer>
 	<!--
 	translink embedded site 
 	<iframe src="http://www.translink.ca/Utilities/Embedded Trip Planner.aspx" scrolling="no" width="340" height="400"> </iframe>
@@ -43,10 +46,6 @@
 	<p id = "jsonFull"></p> <!-- this is for DEBUGGING purpose-->
 
 	</div>
-
-	<footer>
-	"Some of the data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service."
-	</footer>
 
 </body>
 

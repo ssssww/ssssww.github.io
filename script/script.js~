@@ -16,7 +16,7 @@ $(document).ready( main );
 
 
 /////////////////////////////////////////////////////////////////////////
-
+//
 ///////////////
 //DEBUGGING: show full json in text
 //sub-function to print json in string
@@ -84,7 +84,7 @@ function jsonScheduleToTableArray( json )
 				default:
 					sche[i] = "?";
 			}//switch
-		sche[i] = htmlString( "span", sche[i], "id=");
+		sche[i] = htmlString( "span", sche[i], "id="+ id);
 		i++; // 
 		// SCHEDULE CANCEL STATUS
 		sche[i++] =
@@ -135,7 +135,7 @@ function scheduleArrayToHtmlString( scheduleArray )
 ////////////
 // add html list of a single route to a given bus stop
 // input: json should in json[0] format
-// /////////
+//////////
 function stopSingleRouteHtmlList( jquery, json )
 {
 	var routeNo = json.RouteNo;
@@ -204,8 +204,8 @@ function onFailure(jsonDataFail)
 	); 
 }//onfailure
 
-
 ////////////////////
+//request json
 //get bus stop information using json
 //output to html
 ///////////////////
@@ -230,11 +230,45 @@ function BusStopInfo()
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey 
 		+ "&routeNo=" + routeNumber;
-	var transLinkURL = corsAnywhereURL + stopEstimatesJSON;
+	var translinkURL = corsAnywhereURL + stopEstimatesJSON;
 
+	$.ajax({
+          url: 'service.svc/Request',
+          type: 'GET',
+          dataType: 'json',
+          success: function() { alert('hello!'); },
+          error: function() { alert('boo!'); },
+          beforeSend: setHeader
+        });
+
+      function setHeader(xhr) {
+	xhr.setRequestHeader( 'content-Type', 'application/JSON');
+	xhr.setRequestHeader( 'accept', 'application/JSON');
+	xhr.setRequestHeader( 'Access-Control-Allow-Credentials', 'true');
+	xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://api.translink.ca/*');
+      }
+
+/////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+/*
+	var data =
+		{
+		accept: 'application/JSON',
+		Access-Control-Allow-Origin: 'http://api.translink.ca'
+		}
 	// make json call
-	$.getJSON( transLinkURL, onSuccess)
+	$.getJSON( translinkURL, data, onSuccess)
 		.fail(onFailure);
+		
+
+var url = transLinkURL;
+var xhr = createCORSRequest('PUT', url);
+xhr.setRequestHeader( 'content-type', 'application/JSON');
+xhr.setRequestHeader( 'accept', 'application/JSON');
+xhr.send();
+xhr.onload =
+*/
+
+/////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 }// bus stop info
 
 
