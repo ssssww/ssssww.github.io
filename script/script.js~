@@ -8,25 +8,6 @@ function main()
 	window.alert( "lat   " + location.coords.latitude +"\nlong "+ location.coords.longitude + "\naccu " + location.coords.accuracy);
 	});
 	*/
-	var url = "http://api.translink.ca/rttiapi/v1/stops/50200/estimates?apikey=D6cuDlHX37i2uBtw4JqX";
-	// jQuery preflight request
-$.ajax({
-    type: "GET",
-    headers: {
-	"Access-Control-Allow-Origin":"*",
-	"Content-Type":"application/json",
-	"Accept":"application/json",
-	"Content-Security-Policy":"upgrade-insecure-requests"
-	
-    },
-    url: url 
-}).done(function (data) {
-    console.log(data);
-});
-
-
-
-
 }//main
 
 $(document).ready( main );
@@ -42,7 +23,7 @@ $(document).ready( main );
 function printJsonData(data)
 {
 	var strJsonData = JSON.stringify(data);
-	var jsonData = JSON.parse(strJsonData);
+	//var jsonData = JSON.parse(strJsonData);
 	//equivalent:: document.getElementById("jsonFull").innerHTML = strJsonData;
 	$("#jsonFull").text(strJsonData);
 }//f printJsondata
@@ -181,11 +162,12 @@ function stopSingleRouteHtmlList( jquery, json )
 function onSuccess(jsonDataSuccess)
 {
 	//for DEBUGGING
-	//printJsonData(jsonDataSuccess);
-
-	var stopStatus = jsonDataSuccess;//[0].RouteMap.Href
+	//printJsonData();
 	var $stat = $("#stat");
 	var $result = $("#result");
+
+	var stopStatus = jsonDataSuccess;
+
 	var numRoute = stopStatus.length;
 
 	$stat.text( "number of route: " + numRoute);
@@ -194,7 +176,7 @@ function onSuccess(jsonDataSuccess)
 	var routeSchedule;
 	$result.html( "" );
 	//print requested routes with schedule
-	for( var json of jsonDataSuccess ) {
+	for( var json of stopStatus ) {
 		routeSchedule = stopSingleRouteHtmlList( $result, json );
 		$result.append(routeSchedule);
 	}//for
@@ -228,7 +210,6 @@ function onFailure(jsonDataFail)
 ///////////////////
 function BusStopInfo()
 {
-	// https://cors-anywhere.herokuapp.com/ --- for cors
 	
 	//bus stop # and route # for json request
 	var apiKey = "D6cuDlHX37i2uBtw4JqX";
@@ -241,13 +222,20 @@ function BusStopInfo()
 		routeNumber= "";
 	}//if
 
-	//var corsAnywhereURL = "https://cors-anywhere.herokuapp.com/";
-	//var cors = "https://crossorigin.me/";
+	//var cors = "https://cors-anywhere.herokuapp.com/";
+	var cors = "https://crossorigin.me/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey 
 		+ "&routeNo=" + routeNumber;
-	var translinkURL = stopEstimatesJSON + "&callback=?";
+	var translinkURL = cors + stopEstimatesJSON;
+	/*
+	// yql as alternative to cors proxy
+	var translinkURL =
+		'https://query.yahooapis.com/v1/public/yql?q='
+		+ encodeURIComponent('select * from xml where url="' + stopEstimatesJSON + '"')
+		+ '&format=json&diagnostics=true';
+		*/
 
 	$.getJSON( translinkURL, onSuccess)
 		.fail(onFailure);
