@@ -13,10 +13,15 @@ function main()
 $.ajax({
     type: "GET",
     headers: {
+<<<<<<< HEAD
 	    
+=======
+>>>>>>> 6d8b4277b29f6d78c7560b1f02316546d89e4209
 	"Access-Control-Allow-Origin":"*",
 	"Content-Type":"application/json",
 	"Accept":"application/json",
+	"Content-Security-Policy":"upgrade-insecure-requests"
+	
     },
     url: url 
 }).done(function (data) {
