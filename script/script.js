@@ -8,7 +8,7 @@ function main()
 	window.alert( "lat   " + location.coords.latitude +"\nlong "+ location.coords.longitude + "\naccu " + location.coords.accuracy);
 	});
 	*/
-	var url = "api.translink.ca/rttiapi/v1/stops/50200/estimates?apikey=D6cuDlHX37i2uBtw4JqX";
+	var url = "http://api.translink.ca/rttiapi/v1/stops/50200/estimates?apikey=D6cuDlHX37i2uBtw4JqX";
 	// jQuery preflight request
 $.ajax({
     type: "GET",
