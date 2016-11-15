@@ -13,7 +13,7 @@ function main()
 $.ajax({
     type: "GET",
     headers: {
-	"Content-Security-Policy":"upgrade-insecure-requests"
+	"Content-Security-Policy":"upgrade-insecure-requests",
 	"Access-Control-Allow-Origin":"*",
 	"Content-Type":"application/json",
 	"Accept":"application/json",
