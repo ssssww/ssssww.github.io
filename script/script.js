@@ -8,29 +8,7 @@ function main()
 	window.alert( "lat   " + location.coords.latitude +"\nlong "+ location.coords.longitude + "\naccu " + location.coords.accuracy);
 	});
 	*/
-<<<<<<< HEAD
-=======
-	var url = "http://api.translink.ca/rttiapi/v1/stops/50200/estimates?apikey=D6cuDlHX37i2uBtw4JqX";
-	// jQuery preflight request
-$.ajax({
-    type: "GET",
-    headers: {
-	"Content-Security-Policy":"upgrade-insecure-requests",
-	"Access-Control-Allow-Origin":"*",
-	"Content-Type":"application/json",
-	"Accept":"application/json",
-	"Content-Security-Policy":"upgrade-insecure-requests"
-	
-    },
-    url: url 
-}).done(function (data) {
-    console.log(data);
 });
-
-
-
-
->>>>>>> 08fa7c7c26de9aafd0c9bbe60f555db5ac5ed1cb
 }//main
 
 $(document).ready( main );
