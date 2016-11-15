@@ -8,7 +8,6 @@ function main()
 	window.alert( "lat   " + location.coords.latitude +"\nlong "+ location.coords.longitude + "\naccu " + location.coords.accuracy);
 	});
 	*/
-});
 }//main
 
 $(document).ready( main );

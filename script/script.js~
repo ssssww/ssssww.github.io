@@ -9,11 +9,6 @@ function main()
 	});
 	*/
 });
-
-
-
-
->>>>>>> 08fa7c7c26de9aafd0c9bbe60f555db5ac5ed1cb
 }//main
 
 $(document).ready( main );
