@@ -242,7 +242,6 @@ function BusStopInfo()
         });
 
       function setHeader(xhr) {
-	xhr.setRequestHeader( 'content-Type', 'application/JSON');
 	xhr.setRequestHeader( 'accept', 'application/JSON');
 	xhr.setRequestHeader( 'Access-Control-Allow-Credentials', true);
 	xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://api.translink.ca/*');

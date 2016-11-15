@@ -7,6 +7,7 @@ body
 
 h1, h2, h3
 {
+	line-height:3vw;
 	padding:0;
 	margin:0;
 }
@@ -89,4 +90,9 @@ span
 #stat_ahead
 {
 	color:green;
+}
+
+footer
+{
+	font-size:0.8vw
 }
