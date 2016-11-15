@@ -8,8 +8,25 @@ function main()
 	window.alert( "lat   " + location.coords.latitude +"\nlong "+ location.coords.longitude + "\naccu " + location.coords.accuracy);
 	});
 	*/
+	var url = "http://api.translink.ca/rttiapi/v1/stops/50200/estimates?apikey=D6cuDlHX37i2uBtw4JqX";
+	// jQuery preflight request
+$.ajax({
+    type: "GET",
+    headers: {
+	
+	"Origin":"http://www.translink.ca",
+	"Access-Control-Allow-Origin":"true",
+	"Content-Type":"application/json",
+	"Accept":"application/json",
+    },
+    url: url 
+}).done(function (data) {
+    console.log(data);
+});
 
-	// 
+
+
+
 }//main
 
 $(document).ready( main );
@@ -165,7 +182,7 @@ function onSuccess(jsonDataSuccess)
 {
 	//for DEBUGGING
 	//printJsonData(jsonDataSuccess);
-	
+
 	var stopStatus = jsonDataSuccess;//[0].RouteMap.Href
 	var $stat = $("#stat");
 	var $result = $("#result");
@@ -225,50 +242,15 @@ function BusStopInfo()
 	}//if
 
 	//var corsAnywhereURL = "https://cors-anywhere.herokuapp.com/";
-	var corsAnywhereURL = "";
+	//var cors = "https://crossorigin.me/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey 
 		+ "&routeNo=" + routeNumber;
-	var translinkURL = corsAnywhereURL + stopEstimatesJSON;
+	var translinkURL = stopEstimatesJSON + "&callback=?";
 
-	$.ajax({
-          url: 'service.svc/Request',
-          type: 'GET',
-          dataType: 'json',
-          success: function() { alert('hello!'); },
-          error: function() { alert('boo!'); },
-          beforeSend: setHeader
-        });
-
-      function setHeader(xhr) {
-	xhr.setRequestHeader( 'content-Type', 'application/JSON');
-	xhr.setRequestHeader( 'accept', 'application/JSON');
-	xhr.setRequestHeader( 'Access-Control-Allow-Credentials', true);
-	xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://api.translink.ca/*');
-      }
-
-/////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-/*
-	var data =
-		{
-		accept: 'application/JSON',
-		Access-Control-Allow-Origin: 'http://api.translink.ca'
-		}
-	// make json call
-	$.getJSON( translinkURL, data, onSuccess)
+	$.getJSON( translinkURL, onSuccess)
 		.fail(onFailure);
-		
-
-var url = transLinkURL;
-var xhr = createCORSRequest('PUT', url);
-xhr.setRequestHeader( 'content-type', 'application/JSON');
-xhr.setRequestHeader( 'accept', 'application/JSON');
-xhr.send();
-xhr.onload =
-*/
-
-/////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 }// bus stop info
 
 
