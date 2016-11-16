@@ -46,7 +46,6 @@ function htmlString( type, string, option )
 function jsonScheduleToTableArray( json )
 {
 	var schedules = [];
-	var numElements = json.Schedules.length;
 
 	var j = 0; // schedules incrementor
 	//CHROME: for( let jsche of json.Schedules )
