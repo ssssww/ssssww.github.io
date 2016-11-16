@@ -23,20 +23,17 @@ Maybe a web brower to view the page.
 
 ## Known issues
 1. It takes some time to load results sometimes;  
-  ==> this is due to heroku(or dyno) puts the server to sleep after 30min of idle state -- Yes, I'm a free loader.
+  ==> this is due to heroku(or dyno) puts the server to sleep after 30min of idle state; I am using free version :)
 
 2. It shows negative minutes;  
-  ==> that is the original data from the tanslink too bad you missed that one.
+  ==> that is the original data from the tanslink; too bad you missed that one :(
   
 
 ## Resoruces
 
-CORS proxy:
-
-  (cors-anywhere)
-  
+CORS proxy:  
+  (cors-anywhere)  
   https://github.com/Rob--W/cors-anywhere
   
-Translink open API:
-
+Translink open API:  
   https://developer.translink.ca
