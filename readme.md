@@ -22,8 +22,8 @@ No installation required.
 Maybe a web brower to view the page.
 
 ## Known issues
-# It takes some time to load results sometimes; 
-  *this is due to heroku(or dyno) puts the server to sleep after 30min of idle state -- Yes, I'm a free loader.
+1.It takes some time to load results sometimes; 
+  ->this is due to heroku(or dyno) puts the server to sleep after 30min of idle state -- Yes, I'm a free loader.
 
 # It shows negative minutes;
   *that is the original data from the tanslink too bad you missed that one.
