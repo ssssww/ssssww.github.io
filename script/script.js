@@ -1,20 +1,16 @@
 //java script
 
+//so lonely without it
 function main()
 {
-	/*
-	// get location
-	navigator.geolocation.getCurrentPosition(function(location) {
-	window.alert( "lat   " + location.coords.latitude +"\nlong "+ location.coords.longitude + "\naccu " + location.coords.accuracy);
-	});
-	*/
 }//main
 
 $(document).ready( main );
 
 
 /////////////////////////////////////////////////////////////////////////
-//
+
+
 ///////////////
 //DEBUGGING: show full json in text
 //sub-function to print json in string
@@ -26,7 +22,7 @@ function printJsonData(data)
 	//var jsonData = JSON.parse(strJsonData);
 	//equivalent:: document.getElementById("jsonFull").innerHTML = strJsonData;
 	$("#jsonFull").text(strJsonData);
-}//f printJsondata
+}//printJsondata
 
 ///////////////
 //create html tag with string in it
@@ -222,20 +218,16 @@ function BusStopInfo()
 		routeNumber= "";
 	}//if
 
+	// cors url + api url to get json data
 	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
-		+ "/estimates?apikey=" + apiKey 
+		+ "/estimates?apikey=" + apiKey
+		+ "&count=10"
 		+ "&routeNo=" + routeNumber;
 	var translinkURL = cors + stopEstimatesJSON;
-	/*
-	// yql as alternative to cors proxy
-	var translinkURL =
-		'https://query.yahooapis.com/v1/public/yql?q='
-		+ encodeURIComponent('select * from xml where url="' + stopEstimatesJSON + '"')
-		+ '&format=json&diagnostics=true';
-		*/
-
+	
+	// get json data
 	$.getJSON( translinkURL, onSuccess)
 		.fail(onFailure);
 }// bus stop info
@@ -263,7 +255,11 @@ function changeColorAndClear( text )
 
 }//changeColorAndClear
 
-function checkInput( input )
+
+////////////////////////
+// pad input with '#'
+////////////////////////
+function padding( input )
 {
 	var $input = $(input);
 	var id = $input.attr("id");
@@ -271,13 +267,13 @@ function checkInput( input )
 	var textLength = $input.prop('selectionStart');
 	var absoluteLength = value.length;
 
-	//stopNo
+	// set length of the given input
 	var stopNumberLength = 5;
 	var routeNumberLength = 3;
+	//TODO: use it when extended
 	var busIdLength = 4;
 
 	var wantedLength = stopNumberLength;
-
 
 	// deal with left arrow key; unable to move left
 	switch( event.keyCode )
@@ -309,7 +305,6 @@ function checkInput( input )
 
 		default:
 			alert("wtf?");
-
 	}//switch
 }//checkinput
 
