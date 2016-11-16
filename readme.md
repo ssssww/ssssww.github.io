@@ -17,8 +17,8 @@ This proxy server is merely a copy and paste with tweaked Access-Control-Allow-O
 ## Installation
 
 No installation required.
-Maybe a web brower to view the page.
-goto https://sssssww.github.io
+Maybe a web brower to view the page.  
+goto https://ssssww.github.io
 
 ## Usage
 
