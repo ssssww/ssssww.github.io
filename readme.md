@@ -25,10 +25,6 @@ This proxy server is merely a copy and paste with tweaked Access-Control-Allow-O
 
   that is the original data from the tanslink too bad you missed that one.
   
--Does not work in IE;
-
-  Working on it!
-
 
 ==Resoruces==
 
