@@ -46,11 +46,13 @@ function htmlString( type, string, option )
 function jsonScheduleToTableArray( json )
 {
 	var schedules = [];
+	var numSchedule = json.Schedules.length;
 
 	var j = 0; // schedules incrementor
-	//CHROME: for( let jsche of json.Schedules )
-	for( var jsche in json.Schedules )
+	// for( let jsche of json.Schedules ) //ie doesn't allow this
+	for( var iter = 0; iter <  numSchedule; iter++ )
 	{
+		var jsche = json.Schedules[iter];
 		var sche = [], i = 0; // single shceudle and its incrementor
 		// EXPECTED LEAVE TIME + EXPECTED COUNTDOWN
 		sche[i++] = $.trim(jsche.ExpectedLeaveTime.slice(0, 7))
@@ -158,7 +160,7 @@ function stopSingleRouteHtmlList( jquery, json )
 function onSuccess(jsonDataSuccess)
 {
 	//for DEBUGGING
-	printJsonData();
+	//printJsonData();
 	var $stat = $("#stat");
 	var $result = $("#result");
 
@@ -172,8 +174,9 @@ function onSuccess(jsonDataSuccess)
 	var routeSchedule;
 	$result.html( "" );
 	//print requested routes with schedule
-	//CHROME: for( let json of stopStatus ) {
-	for( var json in stopStatus ) {
+	//for( let json of stopStatus ) {  // fancier but IE doesn't allow this
+	for( var i = 0; i < numRoute; i++ ) {
+		var json = stopStatus[0];
 		routeSchedule = stopSingleRouteHtmlList( $result, json );
 		$result.append(routeSchedule);
 	}//for
@@ -220,7 +223,8 @@ function BusStopInfo()
 	}//if
 
 	// cors url + api url to get json data
-	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
+//	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
+	var cors = "https://cors-anywhere.herokuapp.com/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey
@@ -297,7 +301,12 @@ function padding( input )
 			// enforce input length
 			var paddingLength = wantedLength - absoluteLength;
 			if( paddingLength >=0 && paddingLength < wantedLength) {
-				$input.val( value + "#".repeat(paddingLength));
+				//$input.val( value + "#".repeat(paddingLength)); // ie does not allow this
+				var paddings = ""
+				for( var i = 0; i < paddingLength; i++ ) {
+					paddings +="#";
+				}//for
+					$input.val( value + paddings );
 			}//if
 
 			// set insert
