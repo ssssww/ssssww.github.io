@@ -49,7 +49,8 @@ function jsonScheduleToTableArray( json )
 	var numElements = json.Schedules.length;
 
 	var j = 0; // schedules incrementor
-	for( let jsche of json.Schedules )
+	//CHROME: for( let jsche of json.Schedules )
+	for( var jsche in json.Schedules )
 	{
 		var sche = [], i = 0; // single shceudle and its incrementor
 		// EXPECTED LEAVE TIME + EXPECTED COUNTDOWN
@@ -172,7 +173,8 @@ function onSuccess(jsonDataSuccess)
 	var routeSchedule;
 	$result.html( "" );
 	//print requested routes with schedule
-	for( let json of stopStatus ) {
+	//CHROME: for( let json of stopStatus ) {
+	for( var json in stopStatus ) {
 		routeSchedule = stopSingleRouteHtmlList( $result, json );
 		$result.append(routeSchedule);
 	}//for
