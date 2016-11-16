@@ -49,7 +49,7 @@ function jsonScheduleToTableArray( json )
 	var numElements = json.Schedules.length;
 
 	var j = 0; // schedules incrementor
-	for( jsche of json.Schedules )
+	for( let jsche of json.Schedules )
 	{
 		var sche = [], i = 0; // single shceudle and its incrementor
 		// EXPECTED LEAVE TIME + EXPECTED COUNTDOWN
