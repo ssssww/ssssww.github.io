@@ -22,11 +22,11 @@ goto https://sssssww.github.io
 
 ## Usage
 
-- [OUTPUT:]  
-    - [Maximum of next ten buses per scheduled routes starting from requested time.]
-- [INPUT:]  
-    - [(required) five-digit bus stop #]
-    - [(optional) three-digit bus route #]
+- ****OUTPUT:***
+    - Maximum of next ten buses per scheduled routes starting from requested time.
+- ***INPUT:***
+    - (required) five-digit bus stop #
+    - (optional) three-digit bus route #
 
 
 ## Known issues
