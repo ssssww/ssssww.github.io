@@ -22,20 +22,20 @@ goto https://sssssww.github.io
 
 ## Usage
 
--[OUTPUT:]  
-    -[Maximum of next ten buses per scheduled routes starting from requested time.]
--[INPUT:]  
-    -[(required) five-digit bus stop #]
-    -[(optional) three-digit bus route #]
+- [OUTPUT:]  
+    - [Maximum of next ten buses per scheduled routes starting from requested time.]
+- [INPUT:]  
+    - [(required) five-digit bus stop #]
+    - [(optional) three-digit bus route #]
 
 
 ## Known issues
 
-1. It takes some time to load results sometimes;  
-  ==> this is due to heroku(or dyno) puts the server to sleep after 30min of idle state; I am using free version :)
+***1. It takes some time to load results sometimes***
+  * this is due to heroku(or dyno) puts the server to sleep after 30min of idle state; I am using free version :)
 
-2. It shows negative minutes;  
-  ==> that is the original data from the tanslink; too bad you missed that one :(
+***2 It shows negative minutes***
+  * that is the original data from the tanslink; too bad you missed that one :(
   
 
 ## Resoruces
