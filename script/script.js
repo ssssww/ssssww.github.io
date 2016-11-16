@@ -222,7 +222,7 @@ function BusStopInfo()
 		routeNumber= "";
 	}//if
 
-	var cors = "https://cors-anywhere.herokuapp.com/";
+	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey 
