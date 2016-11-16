@@ -17,7 +17,7 @@ This proxy server is merely a copy and paste with tweaked Access-Control-Allow-O
 
 ==Known issues==
 
--It takes some time to load results sometimes;
+-It takes some time to load results sometimes; 
   this is due to heroku(or dyno) puts the server to sleep after 30min of idle state -- Yes, I'm a free loader.
 
 -It shows negative minutes;
