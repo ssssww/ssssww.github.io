@@ -172,7 +172,7 @@ function onSuccess(jsonDataSuccess)
 	var routeSchedule;
 	$result.html( "" );
 	//print requested routes with schedule
-	for( var json of stopStatus ) {
+	for( let json of stopStatus ) {
 		routeSchedule = stopSingleRouteHtmlList( $result, json );
 		$result.append(routeSchedule);
 	}//for
