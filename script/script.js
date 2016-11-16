@@ -158,7 +158,7 @@ function stopSingleRouteHtmlList( jquery, json )
 function onSuccess(jsonDataSuccess)
 {
 	//for DEBUGGING
-	//printJsonData();
+	printJsonData();
 	var $stat = $("#stat");
 	var $result = $("#result");
 
