@@ -74,7 +74,7 @@ input
 
 table, th, td
 {
-	width: 90%;
+	width: 100%;
 	border: 2px solid #CCC;
 	border-collapse: collapse;
 	text-align: center;
