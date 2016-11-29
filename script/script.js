@@ -176,7 +176,7 @@ function onSuccess(jsonDataSuccess)
 	//print requested routes with schedule
 	//for( let json of stopStatus ) {  // fancier but IE doesn't allow this
 	for( var i = 0; i < numRoute; i++ ) {
-		var json = stopStatus[0];
+		var json = stopStatus[i];
 		routeSchedule = stopSingleRouteHtmlList( $result, json );
 		$result.append(routeSchedule);
 	}//for
