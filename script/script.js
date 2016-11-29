@@ -154,7 +154,7 @@ function stopSingleRouteHtmlList( jquery, json )
 }//stopSingleRouteHtmlList
 
 ///////////////
-//on json data retrival was successful do the following:
+//on json data retrival was successful do the following:json
 //return suitable data; for now, routemap reference page kmz
 //////////////
 function onSuccess(jsonDataSuccess)
@@ -223,8 +223,8 @@ function BusStopInfo()
 	}//if
 
 	// cors url + api url to get json data
-//	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
-	var cors = "https://cors-anywhere.herokuapp.com/";
+	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
+//	var cors = "https://cors-anywhere.herokuapp.com/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey
