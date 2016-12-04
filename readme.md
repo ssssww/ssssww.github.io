@@ -1,7 +1,7 @@
 ## Synopsis
 
 
-go to https://ssssww.github.io to check status of bus stops in vancovuer area.
+Co to https://ssssww.github.io to see current bus stop status in vancovuer area.
 
 ## Motivation
 
