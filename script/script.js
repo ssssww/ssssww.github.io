@@ -373,10 +373,10 @@ function geoFindMe() {
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
 			+ "center=" + latitude + "," + longitude
-			+ "&zoom=13&size=300x300&maptpe=roadmap"
+			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-			+ "&key=" + api;
-img.src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318 &markers=color:red%7Clabel:C%7C40.718217,-73.998284 &ke"+api;
+			+ "&ke" + api;
+
 		output.appendChild(img);
 	}
 
