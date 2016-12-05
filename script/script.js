@@ -370,8 +370,13 @@ function geoFindMe() {
 		
 		var img = new Image();
 		var api = "AIzaSyAcSOiD76Tstt0E99112MmyfTczbOHvNIM";
-		img.src = "https://maps.googleapis.com/maps/api/staticmap?key=" + api + "&center=" + latitude + "," + longitude + "&marker=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+		img.src =
+			"https://maps.googleapis.com/maps/api/staticmap?key=" + api
+			+ "&center=" + latitude + "," + longitude
+			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + + longitude
+			+ "&zoom=13&size=300x300&sensor=false";
 
+		
 		output.appendChild(img);
 	}
 
