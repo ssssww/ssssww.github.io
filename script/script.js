@@ -375,12 +375,7 @@ function geoFindMe() {
 			+ "center=" + latitude + "," + longitude
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-			+ "&ke" + api;
-			"https://maps.googleapis.com/maps/api/staticmap?"
-			+ "center=" + latitude + "," + longitude
-			+ "&zoom=15&size=300x300&maptpe=roadmap"
-			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-			+ "&keAIzaSyAcSOiD76Tstt0E99112MmyfTczbOHvNIM";
+			+ "&key=" + api;
 
 		output.appendChild(img);
 	}
