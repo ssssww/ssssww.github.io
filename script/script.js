@@ -3,6 +3,7 @@
 //so lonely without it
 function main()
 {
+	geo();
 }//main
 
 $(document).ready( main );
@@ -64,24 +65,24 @@ function jsonScheduleToTableArray( json )
 		// SCHEDULE STATUS
 		sche[i] = jsche.ScheduleStatus;
 		var id = "";
-			//set schedule status
-			switch(sche[i])
-			{
-				case "-":
-					sche[i] = "DELAYED";
-					id = "stat_delayed";
-					break;
-				case "*":
-					sche[i] = "on time";
-					id = "stat_ontime";
-					break;
-				case "+":
-					sche[i] = "AHEAD";
-					id = "stat_ahead";
-					break;
-				default:
-					sche[i] = "?";
-			}//switch
+		//set schedule status
+		switch(sche[i])
+		{
+			case "-":
+				sche[i] = "DELAYED";
+				id = "stat_delayed";
+				break;
+			case "*":
+				sche[i] = "on time";
+				id = "stat_ontime";
+				break;
+			case "+":
+				sche[i] = "AHEAD";
+				id = "stat_ahead";
+				break;
+			default:
+				sche[i] = "?";
+		}//switch
 		sche[i] = htmlString( "span", sche[i], "id="+ id);
 		i++; // 
 		// SCHEDULE CANCEL STATUS
@@ -124,7 +125,7 @@ function scheduleArrayToHtmlString( scheduleArray )
 			htmlSingleEntriesStr += htmlString( "td", scheduleArray[j][i] );
 		}//for j
 		htmlTableRowStr += htmlString( "tr", htmlSingleEntriesStr );
-		
+
 	}//for i
 
 	return htmlString( "table", htmlTableRowStr );
@@ -200,9 +201,9 @@ function onFailure(jsonDataFail)
 	}//if
 
 	$("#result").html (
-		"error code: " + jsonData.responseJSON.Code +
-		"<br/>Message: " + jsonData.responseJSON.Message
-	); 
+			"error code: " + jsonData.responseJSON.Code +
+			"<br/>Message: " + jsonData.responseJSON.Message
+			); 
 }//onfailure
 
 ////////////////////
@@ -212,7 +213,7 @@ function onFailure(jsonDataFail)
 ///////////////////
 function BusStopInfo()
 {
-	
+
 	//bus stop # and route # for json request
 	var apiKey = "D6cuDlHX37i2uBtw4JqX";
 	var busStopNumber = $("#stopNo").val();
@@ -226,14 +227,14 @@ function BusStopInfo()
 
 	// cors url + api url to get json data
 	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
-//	var cors = "https://cors-anywhere.herokuapp.com/";
+	//	var cors = "https://cors-anywhere.herokuapp.com/";
 	var stopEstimatesJSON = "http://api.translink.ca/rttiapi/v1/stops/"
 		+ busStopNumber
 		+ "/estimates?apikey=" + apiKey
 		+ "&count=10"
 		+ "&routeNo=" + routeNumber;
 	var translinkURL = cors + stopEstimatesJSON;
-	
+
 	// get json data
 	$.getJSON( translinkURL, onSuccess)
 		.fail(onFailure);
@@ -258,7 +259,7 @@ function changeColorAndClear( text )
 		var length = $text.prop('selectionStart');
 		$text.prop({'selectionStart': length, 'selectionEnd': length+1 });
 	}//if/else
-	
+
 
 }//changeColorAndClear
 
@@ -305,10 +306,10 @@ function padding( input )
 			if( paddingLength >=0 && paddingLength < wantedLength) {
 				//$input.val( value + "#".repeat(paddingLength)); // ie does not allow this
 				var paddings = ""
-				for( var i = 0; i < paddingLength; i++ ) {
-					paddings +="#";
-				}//for
-					$input.val( value + paddings );
+					for( var i = 0; i < paddingLength; i++ ) {
+						paddings +="#";
+					}//for
+				$input.val( value + paddings );
 			}//if
 
 			// set insert
@@ -347,6 +348,45 @@ function returnOnEnter( keyStroke )
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //google map + translink api to locate buses and bus stops
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//retrieve geolocation
+
+function geoFindMe() {
+	var output = document.getElementById("out");
+
+	if (!navigator.geolocation){
+		output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+		return;
+	}
+
+	function success(position) {
+		var latitude  = position.coords.latitude;
+		var longitude = position.coords.longitude;
+
+		output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+		var img = new Image();
+		img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+		output.appendChild(img);
+	}
+
+	function error() {
+		output.innerHTML = "Unable to retrieve your location";
+	}
+
+	output.innerHTML = "<p>Locating…</p>";
+
+	navigator.geolocation.getCurrentPosition(success, error);
+}
+
+// map with marks with their bus stop number
+// hide map with button click
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//track buses with bus numbers on a map
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
