@@ -373,10 +373,9 @@ function geoFindMe() {
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
 			+ "center=" + latitude + "," + longitude
+			+ "&zoom=13&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-			+ "&zoom=13&size=300x300&sensor=false"
 			+ "&key=" + api;
-
 		
 		output.appendChild(img);
 	}
