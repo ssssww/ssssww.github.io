@@ -372,11 +372,11 @@ function geoFindMe() {
 		var api = "AIzaSyAcSOiD76Tstt0E99112MmyfTczbOHvNIM";
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
-			+ "center=" + latitude + "," + longitude
+			+ "center=" latitude +","+longitude
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
 			+ "&ke" + api;
-img.src= "https://maps.googleapis.com/maps/api/staticmap?center=49.231529599999995,-123.11862469999998&zoom=15&size=300x300&maptpe=roadmap&markers=color:red%7Clabel:C%7C49.231529599999995,-123.11862469999998&keAIzaSyAcSOiD76Tstt0E99112MmyfTczbOHvNIM";
+
 		output.appendChild(img);
 	}
 
