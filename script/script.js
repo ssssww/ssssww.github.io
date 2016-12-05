@@ -369,13 +369,29 @@ function geoFindMe() {
 
 		
 		var img = new Image();
-		var api = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
+		var transLinkApi = "D6cuDlHX37i2uBtw4JqX";
+		var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
 			+ "center=" + latitude + "," + longitude
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-			+ "&key=" + api;
+			+ "&key=" + googleMapApi;
+
+		var cors = "https://fierce-citadel-24828.herokuapp.com/";
+		var busStopURL =
+			cors + "http://api.translink.ca/rttiapi/v1/stops?apikey=" + transLinkApi
+			+ "&lat=" + latitude
+			+ "&long=" + longitude
+			+ "&routeNo=";
+
+		$.getJSON( busStopURL, function( json ){ printJsonData( json);  })
+			.fail();
+		//busnum + coordinate
+		// get jsondata
+		// parse it
+		// make google map api url
+		// get static map image
 
 		output.appendChild(img);
 	}
