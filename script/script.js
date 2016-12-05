@@ -369,7 +369,6 @@ function geoFindMe() {
 
 		
 		var img = new Image();
-		var api = "AIzaSyAcSOiD76Tstt0E99112MmyfTczbOHvNIM";
 		var api = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
