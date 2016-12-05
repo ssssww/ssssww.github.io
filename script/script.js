@@ -372,7 +372,7 @@ function geoFindMe() {
 		var api = "AIzaSyAcSOiD76Tstt0E99112MmyfTczbOHvNIM";
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
-			+ "center=" latitude +","+longitude
+			+ "center=" + latitude +","+longitude
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
 			+ "&ke" + api;
