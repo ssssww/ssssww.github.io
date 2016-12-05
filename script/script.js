@@ -384,9 +384,9 @@ function geoFindMe() {
 			+ "&lat=" + latitude
 			+ "&long=" + longitude
 			+ "&routeNo=";
-
-		$.getJSON( busStopURL, function( json ){ printJsonData( json);  })
-			.fail();
+		var test = function( json ){ printJsonData( json);  }
+		$.getJSON( busStopURL, test )
+			.fail( test  );
 		//busnum + coordinate
 		// get jsondata
 		// parse it
