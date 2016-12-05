@@ -1,18 +1,22 @@
 ## Synopsis
 
-This is a web-page to check status of bus stops in vancovuer area.
+
+Go to https://ssssww.github.io to see current bus stop status in vancovuer area.
 
 ## Motivation
 
-It is always painful to wait your bus to show up, but it never shows up on time or is cancelled when you need them the most.
-This seems to be one of the reasons why TransLink decied to provide open API.
-All we need to do is make use of it right?
+It is frustrating to wait for a bus to show up,
+especially when it is late or even cancelled without you knowing about it.
+I cannot imagine you waiting outside on a wet rainy day or on a cold winter nights.
+This is why I made it; and maybe because I needed something to show?
 
 ## Construction
 
-Data from TransLink is in JSON format and is processed with javascript.
+Data is requested from TransLink's RESTful web service in JSON format.
+This JSON formatted data is then processed with javascript.
 Since TransLink does not allow any Access-Control-Allow-Origin, CORS proxy is used.
-This proxy server is merely a copy and paste with tweaked Access-Control-Allow-Origin to allow 'ssssww.github.io'.
+This proxy server is merely a copy and paste of Rob Wu's 'cors-anywhere' -- you can find the reference below at Resources.
+I tweaked Access-Control-Allow-Origin part to allow only request from 'ssssww.github.io'.
 
 ## Installation
 
@@ -32,11 +36,10 @@ goto https://ssssww.github.io
 ## Known issues
 
 ***1. It takes some time to load results sometimes***
-  * this is due to heroku(or dyno) puts the server to sleep after 30min of idle state; I am using free version :)
+  * This is due to heroku(or dyno) puts the server to sleep after 30min of idle state; I am using free version :)
 
 ***2 It shows negative minutes***
-  * that is the original data from the tanslink; too bad you missed that one :(
-  
+  * That is the original data from the tanslink; too bad you missed that one :(
 
 ## Resoruces
 
