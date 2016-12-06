@@ -388,6 +388,8 @@ function geoFindMe() {
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
+			// jquery and google map api problem
+			// need to add [0]; since it is expecting node not array or nodelist
 			var mapx = new google.maps.Map($('#map')[0], mapOptions);
 			
 
