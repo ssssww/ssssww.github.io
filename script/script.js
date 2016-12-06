@@ -417,15 +417,12 @@ function geoFindMe() {
 					map: map,
 				}//markeroptions
 
-				var marker = new google.maps.Marker(markerOptions);
-
-				var infowindow = new google.maps.InfoWindow({
-					content: String(json[i].StopNo)
-				});
-
-				marker.addListener('click', function() {
-					infowindow.open(map, marker);
-				});
+				google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+							return function() {
+								infowindow.setContent(content);
+								infowindow.open(map,marker);
+							};
+							})(marker,String(json[i].StopNo),infowindow));
 			}//for
 			
 
