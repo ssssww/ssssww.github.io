@@ -353,19 +353,20 @@ function returnOnEnter( keyStroke )
 //retrieve geolocation
 
 function geoFindMe() {
-	var map = $("#map");
+	//jquery won't print html in a single line
+	var map = document.getElementById("map");
 
-	if (!navigator.geolocation){
-		map.html( "<p>Geolocation is not supported by your browser</p>");
+	if (!navigator.geolocation) {
+		map.innerHTML = "<p>Geolocation is not supported by your browser</p>";
 		return;
-	}
+	}//if
 
 	function success(position) {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
-		map.html('<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
-
+		output.innerHTML = '<p>Latitude is ' + latitude + '°<br>Longitude is ' + longitude + '°</p>';
+ 
 		// get bus stop# and coordinates
 		var routeNo = "";
 		var transLinkApi = "D6cuDlHX37i2uBtw4JqX";
@@ -380,10 +381,9 @@ function geoFindMe() {
 		// make this more useful
 		function test(json)
 		{
-			var centerLatlng = new google.maps.LatLng(latitude, longitude);
 			var mapOptions = {
 				zoom: 8,
-				center: centerLatlng,
+				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
 			var mapx = new google.maps.Map(map,
@@ -417,16 +417,16 @@ function geoFindMe() {
 		// make google map api url
 		// get static map image
 
-	}
+	}//success
 
 	function error() {
 		map.innerHTML = "Unable to retrieve your location";
-	}
+	}//error
 
 	map.innerHTML = "<p>Locating…</p>";
 
 	navigator.geolocation.getCurrentPosition(success, error);
-}
+}//geoFindMe
 
 // map with marks with their bus stop number
 // hide map with button click
