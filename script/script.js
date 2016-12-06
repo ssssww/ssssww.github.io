@@ -224,6 +224,12 @@ function BusStopInfo()
 		routeNumber= "";
 	}//if
 
+	//if bus stop is invalid, do nothing
+	var reg5Digit = new RegExp(/^\d{5}$/);
+	if( !busStopNumber.test(reg5Digit) ){
+		return ;
+	}//if
+
 	// cors url + api url to get json data
 	var cors = "https://fierce-citadel-24828.herokuapp.com/";//cloned version of "https://cors-anywhere.herokuapp.com/";
 	//	var cors = "https://cors-anywhere.herokuapp.com/";
