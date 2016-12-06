@@ -388,6 +388,7 @@ function geoFindMe() {
 
 		//printJsonData(json[0]);
 			var len = json.length;
+			return markerCoordinates;
 /*			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
@@ -399,7 +400,7 @@ function geoFindMe() {
 */
 		}//test
 
-		$.getJSON( busStopURL, test )
+		$.getJSON( busStopURL, a = test )
 			.fail( test  );
 
 		//busnum + coordinate
@@ -419,6 +420,7 @@ function geoFindMe() {
 			+ "&key=" + googleMapApi;
 
 	console.log(img.src);
+	console.log(a);
 
 		output.appendChild(img);
 	}
