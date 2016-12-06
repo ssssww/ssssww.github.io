@@ -399,6 +399,14 @@ function geoFindMe() {
 			// need to add [0]; since it is expecting node not array or nodelist
 			var map = new google.maps.Map($('#map')[0], mapOptions);
 
+				var marker =
+				{
+					position: {lat: latitude, lng: longitude},
+					map: map,
+					title: 'a' 
+				}
+				var marker = new google.maps.Marker();
+
 			//set markers
 			var len = json.length;
 			console.log(len);
