@@ -420,7 +420,7 @@ function geoFindMe() {
 			+ "&key=" + googleMapApi;
 
 	console.log(img.src);
-	console.log(a);
+	console.log(test);
 
 		output.appendChild(img);
 	}
