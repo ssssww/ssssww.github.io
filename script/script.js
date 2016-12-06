@@ -421,10 +421,7 @@ function geoFindMe() {
 					content: String(json[i].StopNo)
 				});
 
-				var marker = new google.maps.Marker({
-					position: uluru,
-					map: map
-				});
+				var marker = new google.maps.Marker(markerOptions);
 				marker.addListener('click', function() {
 					infowindow.open(map, marker);
 				});
