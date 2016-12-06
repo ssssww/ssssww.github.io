@@ -387,7 +387,7 @@ function geoFindMe() {
 			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
-					"&markers=icon:http://chart.apis.google.com/chart%3Fchst%3Dd_map_spin%26Chld=2.1%7C0%7CFFFF42%7C13%7Cb%7CKumquats"
+					"&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_spin&chld=2.1|0|FFFF42|13|b|ssss"
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 					//+"chst=d_map_spin%26chld=2.1%7C0%7CFFFF42%7C13%7Cb%7CKumquats";
