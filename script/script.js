@@ -357,13 +357,11 @@ function geoFindMe() {
 	//jquery won't print html in a single line
 	var map = $("#map");
 
-	console.log(map.height());
-
 	if (!navigator.geolocation) {
 		map.html("<p>Geolocation is not supported by your browser</p>");
 		map.height("0.0vw");
 		return;
-	} else if( map.height() == 16 )
+	} else if( map.height() != 0 )
 	{
 		map.height("0.0vw");
 		return;
@@ -414,7 +412,7 @@ function geoFindMe() {
 				fillOpacity: 0.35,
 				map: map,
 				center: youAreHere,
-				radius: 1
+				radius: 100
 			});
 
 			//set markers
