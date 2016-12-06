@@ -366,9 +366,6 @@ function geoFindMe() {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
-		map.html('<p>Latitude is ' + latitude + '°<br>Longitude is ' + longitude + '°</p>');
-		//some comment
- 
 		// get bus stop# and coordinates from translink
 		var routeNo = "";
 		var transLinkApi = "D6cuDlHX37i2uBtw4JqX";
@@ -384,7 +381,7 @@ function geoFindMe() {
 		function test(json)
 		{
 			var mapOptions = {
-				zoom: 20,
+				zoom: 17,
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
