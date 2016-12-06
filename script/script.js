@@ -377,16 +377,22 @@ function geoFindMe() {
 			+ "&long=" + longitude.toFixed(6)
 			+ "&routeNo=" + routeNo;
 
-		var currCoordinate = 
-			"&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-//		var stopCoordinate = 
-//			"&markers=color:red%7Clabel:" + stopNum + "%7C"
-//			+ latitude + "," + longitude
+		//start with coordinate of current location
+		var markerCoordinates = 
+			"&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude;
 
 		// make this more useful
 		var test = function( json )
 		{
-			printJsonData(json[0].StopNo);
+			//printJsonData(json[0].StopNo);
+			var len = json.length;
+			for( var iter = 0; iter < len; iter++ )
+			{
+				markerCoordinates +=
+					"&markers=color:green%7C"
+					+ "label:" + json[iter].StopNo + "%7C"
+					+ json[iter].Latitude + "," + json[iter].Longitude;
+			}//for
 		}//test
 
 		$.getJSON( busStopURL, test )
@@ -405,7 +411,7 @@ function geoFindMe() {
 			"https://maps.googleapis.com/maps/api/staticmap?"
 			+ "center=" + latitude + "," + longitude
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
-			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
+			+ markerCoordinates
 			+ "&key=" + googleMapApi;
 
 		output.appendChild(img);
