@@ -378,12 +378,14 @@ function geoFindMe() {
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
 			+ "&key=" + googleMapApi;
 
-		var cors = "https://fierce-citadel-24828.herokuapp.com/";
+		//var cors = "https://fierce-citadel-24828.herokuapp.com/";
+		var cors = "https://cors-anywhere.herokuapp.com/";
 		var busStopURL =
 			cors + "http://api.translink.ca/rttiapi/v1/stops?apikey=" + transLinkApi
 			+ "&lat=" + latitude
 			+ "&long=" + longitude
 			+ "&routeNo=";
+
 		var test = function( json ){ printJsonData( json);  }
 		$.getJSON( busStopURL, test )
 			.fail( test  );
