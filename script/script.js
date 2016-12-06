@@ -386,7 +386,7 @@ function geoFindMe() {
 		// make this more useful
 		var test = function( json )
 		{
-			printJsonData(json.stop);
+			printJsonData(json);
 		}//test
 
 		$.getJSON( busStopURL, test )
