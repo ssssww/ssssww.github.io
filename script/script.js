@@ -382,13 +382,12 @@ function geoFindMe() {
 			//"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
 
 		// make this more useful
-		var test = function( json )
+		function test( json )
 		{
 		markerCoordinates=	"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude+"&markers=color:green%7glabel:" + json[0].StopNo +  "%7C" +json[0].Latitude + "," + json[0].Longitude;
 
 		//printJsonData(json[0]);
 			var len = json.length;
-			return markerCoordinates;
 /*			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
