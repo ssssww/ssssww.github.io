@@ -3,7 +3,6 @@
 //so lonely without it
 function main()
 {
-	geo();
 }//main
 
 $(document).ready( main );
@@ -365,7 +364,7 @@ function geoFindMe() {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
-		//output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+		output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 
 	
 		// get bus stop# and coordinates
@@ -387,7 +386,7 @@ function geoFindMe() {
 		// make this more useful
 		var test = function( json )
 		{
-			printJsonData(json.Stops);
+			printJsonData(json.stop);
 		}//test
 
 		$.getJSON( busStopURL, test )
@@ -408,7 +407,6 @@ function geoFindMe() {
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
 			+ "&key=" + googleMapApi;
-
 
 		output.appendChild(img);
 	}
