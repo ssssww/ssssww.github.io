@@ -412,7 +412,7 @@ function geoFindMe() {
 				fillOpacity: 0.35,
 				map: map,
 				center: youAreHere,
-				radius: 1vw
+				radius: 1
 			});
 
 			//set markers
