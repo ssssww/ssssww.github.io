@@ -420,7 +420,7 @@ function geoFindMe() {
 				var marker = new google.maps.Marker(markerOptions);
 
 				var infowindow = new google.maps.InfoWindow({
-					content: json[i].StopNo
+					content: String(json[i].StopNo)
 				});
 
 				marker.addListener('click', function() {
