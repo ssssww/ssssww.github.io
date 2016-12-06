@@ -390,7 +390,8 @@ function geoFindMe() {
 			{
 				markerCoordinates +=
 					"&markers=color:green%7C"
-					+ "label:" + json[iter].StopNo + "%7C"
+					//+ "label:" + json[iter].StopNo + "%7C"
+					+ "label:" + "S" + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
 				alert(markerCoordinates);
