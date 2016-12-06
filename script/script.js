@@ -363,11 +363,11 @@ function geoFindMe() {
 		return;
 	} else if( map.height() != 0 )
 	{
-		$("locateStops").text( "Nearby Bus Stops (show map)"  );
+		$("#locateStops").text( "Nearby Bus Stops (show)"  );
 		map.height("0.0vw");
 		return;
 	} else {
-		$("locateStops").text( "Nearby Bus Stops (hide map)"  );
+		$("#locateStops").text( "Nearby Bus Stops (hide)"  );
 		map.height("30.0vw");
 	}//if/elseif/e
 
