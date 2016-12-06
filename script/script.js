@@ -391,6 +391,7 @@ function geoFindMe() {
 
 			//set markers
 			var len = json.length;
+			console.log(len);
 			for( var i = 0; i < len; i++ )
 			{
 				latlng = { lat: json[i].Latitude, lng: json[i].Longitude };
