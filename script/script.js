@@ -413,14 +413,12 @@ function geoFindMe() {
 
 			//set markers
 			var len = json.length;
-			var infoWindowArray = new Array(len);
-			var markerArray = new Array(len);
+		//	var infoWindowArray = new Array(len);
+		//	var markerArray = new Array(len);
 
 			for( var i = 0; i < len; i++ )
 			{
 				jsonVal = json[i];
-				marker = markerArray[i];
-				infoWindow = infoWindowArray[i];
 
 				latlng = { "lat": jsonVal.Latitude, "lng": jsonVal.Longitude };
 				var markerOptions =
@@ -429,11 +427,11 @@ function geoFindMe() {
 					map: map
 				}//markeroptions
 
-				infoWindow = new google.maps.InfoWindow({
+				var infoWindow = new google.maps.InfoWindow({
 					content: String(jsonVal.StopNo)
 				});
 
-				marker = new google.maps.Marker(markerOptions);
+				var marker = new google.maps.Marker(markerOptions);
 
 
 				setListener( marker, infoWindow, map);
