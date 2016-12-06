@@ -358,6 +358,7 @@ function geoFindMe() {
 	var map = $("#map");
 
 	
+	console.log(map.height());
 
 	if (!navigator.geolocation) {
 		map.html("<p>Geolocation is not supported by your browser</p>");
