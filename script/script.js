@@ -393,7 +393,7 @@ function geoFindMe() {
 			var len = json.length;
 			for( var i = 0; i < len; i++ )
 			{
-			
+				console.log("aaa");
 				latlng = { lat: json[iter].Latitude, lng: json[iter].Longitude };
 				var marker =
 				{
