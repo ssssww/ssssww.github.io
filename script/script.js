@@ -414,7 +414,7 @@ function geoFindMe() {
 			{
 				jsonVal = json[i];
 				marker = markerArray[i];
-				infoWindow = infoWindowArary[i];
+				infoWindow = infoWindowArray[i];
 
 				latlng = { "lat": jsonVal.Latitude, "lng": jsonVal.Longitude };
 				var markerOptions =
