@@ -417,6 +417,8 @@ function geoFindMe() {
 					map: map,
 				}//markeroptions
 
+				var infowindow = new google.maps.InfoWindow();
+
 				google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
 							return function() {
 								infowindow.setContent(content);
