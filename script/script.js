@@ -407,12 +407,12 @@ function geoFindMe() {
 			new google.maps.Circle({
 				strokeColor: '#FFFF00',
 				strokeOpacity: 0.8,
-				strokeWeight: 1,
+				strokeWeight: 2,
 				fillColor: '#FF0000',
 				fillOpacity: 0.35,
 				map: map,
 				center: youAreHere,
-				radius: 100
+				radius: 10
 			});
 
 			//set markers
