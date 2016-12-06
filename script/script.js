@@ -381,7 +381,7 @@ function geoFindMe() {
 		function test(json)
 		{
 			var mapOptions = {
-				zoom: 17,
+				zoom: 15,
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
