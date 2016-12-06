@@ -384,7 +384,7 @@ function geoFindMe() {
 		function test(json)
 		{
 			var mapOptions = {
-				zoom: 8,
+				zoom: 15,
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
@@ -393,8 +393,6 @@ function geoFindMe() {
 
 //			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 
-			map.append(googleMapAPICallback);
-			
 				/*
 			var len = json.length;
 					//+ "label:" + json[iter].StopNo + "%7C"
