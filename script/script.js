@@ -1,4 +1,5 @@
 //java script
+gle.maps.Size(71, 71)
 
 //so lonely without it
 function main()
@@ -417,20 +418,16 @@ function geoFindMe() {
 					position: latlng,
 					map: map,
 					title: json[i].StopNo,
-					size: mid
+					size: new google.maps.Size(71, 71) 
 				}
 				var marker = new google.maps.Marker(markerOptions);
+
 			}//for
 
 
 			
 
 //			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
-
-				/*
-					//+ "label:" + json[iter].StopNo + "%7C"
-					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-			*/
 
 		}//test
 
