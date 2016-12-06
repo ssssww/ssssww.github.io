@@ -379,7 +379,7 @@ function geoFindMe() {
 
 		//start with coordinate of current location
 		var markerCoordinates = 
-			"&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude;
+			"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
 
 		// make this more useful
 		var test = function( json )
