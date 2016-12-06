@@ -388,10 +388,10 @@ function geoFindMe() {
 		// make this more useful
 		function test(json)
 		{
-			var latlngx = {lat: latitude, lng: longitude};
+			var youAreHere = {"lat": latitude, "lng": longitude};
 			var mapOptions = {
 				zoom: 15,
-				center: {lat: latitude, lng: longitude},
+				center: youAreHere,
 				mapTypeId: 'roadmap'
 			};
 			// jquery and google map api problem
@@ -400,7 +400,7 @@ function geoFindMe() {
 
 			var xx = 
 			{
-				position: latlngx ,
+				position: youAreHere,
 				map: map,
 				title: 'Hello World!'
 			};
@@ -411,7 +411,7 @@ function geoFindMe() {
 			console.log(len);
 			for( var i = 0; i < len; i++ )
 			{
-				latlng = { lat: json[i].Latitude, lng: json[i].Longitude };
+				latlng = { "lat": json[i].Latitude, "lng": json[i].Longitude };
 				var markerOptions =
 				{
 					position: latlng,
@@ -422,7 +422,7 @@ function geoFindMe() {
 				var marker = new google.maps.Marker(markerOptions);
 
 				var infowindow = new google.maps.InfoWindow({
-					content: contentString
+					content: ""
 				});
 
 				marker.addListener('click', function() {
