@@ -387,7 +387,7 @@ function geoFindMe() {
 			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
-					"&markers=color:green%7C"
+					"&markers=size:tiny%7Ccolor:green%7C"
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
