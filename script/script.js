@@ -419,7 +419,7 @@ function geoFindMe() {
 			+ markerCoordinates
 			+ "&key=" + googleMapApi;
 
-	console.log(img.src);
+	console.log(markerCoordinates);
 	console.log(test);
 
 		output.appendChild(img);
