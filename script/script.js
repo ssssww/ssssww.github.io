@@ -384,7 +384,7 @@ function geoFindMe() {
 		// make this more useful
 		var test = function( json )
 		{
-			//printJsonData(json[0].StopNo);
+			printJsonData(json[0].Latitude);
 			var len = json.length;
 			for( var iter = 0; iter < len; iter++ )
 			{
