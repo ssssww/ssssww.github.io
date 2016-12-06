@@ -366,15 +366,6 @@ function geoFindMe() {
 
 		output.html('<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
 
-		
-		<iframe
-			width="600"
-			height="450"
-			frameborder="0" style="border:0"
-			src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
-			&q=Space+Needle,Seattle+WA" allowfullscreen>
-		</iframe>
-	
 		// get bus stop# and coordinates
 		var routeNo = "";
 		var transLinkApi = "D6cuDlHX37i2uBtw4JqX";
