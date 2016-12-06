@@ -394,9 +394,10 @@ function geoFindMe() {
 					+ "label:" + "S" + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
+			return markerCoordinates;
 		}//test
 
-		$.getJSON( busStopURL, a = test )
+		$.getJSON( busStopURL, test )
 			.fail( test  );
 
 		//busnum + coordinate
@@ -415,7 +416,7 @@ function geoFindMe() {
 			+ markerCoordinates
 			+ "&key=" + googleMapApi;
 
-	console.log(a);
+	console.log(markerCoordinates);
 
 		output.appendChild(img);
 	}
