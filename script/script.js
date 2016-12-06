@@ -386,7 +386,7 @@ function geoFindMe() {
 			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
-					"&markers=icon:https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=ski|bb|Wheeee!|FFFFFF|000000"
+					"&markers=size:tiny%7Ccolor:green%7C"
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
