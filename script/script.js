@@ -420,6 +420,10 @@ function geoFindMe() {
 				}
 				var marker = new google.maps.Marker(markerOptions);
 
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+				});
+
 				marker.addListener('click', function() {
 					infowindow.open(map, marker);
 				});
