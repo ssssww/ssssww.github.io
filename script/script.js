@@ -390,13 +390,29 @@ function geoFindMe() {
 			};
 			// jquery and google map api problem
 			// need to add [0]; since it is expecting node not array or nodelist
-			var mapx = new google.maps.Map($('#map')[0], mapOptions);
+			var map = new google.maps.Map($('#map')[0], mapOptions);
+
+			//set markers
+			var len = json.length;
+			for( var i = 0; i < len; i++ )
+			{
+				//json[iter].StopNo
+				latlng = { lat: json[iter].Latitude, lng: json[iter].Longitude };
+				var marker =
+				{
+					position: latlng,
+					map: map,
+					title: 'Hello World!'
+				}
+				var marker = new google.maps.Marker();
+			}//for
+
+
 			
 
 //			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 
 				/*
-			var len = json.length;
 					//+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			*/
