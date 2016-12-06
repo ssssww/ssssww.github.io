@@ -412,13 +412,13 @@ function geoFindMe() {
 			for( var i = 0; i < len; i++ )
 			{
 				latlng = { lat: json[i].Latitude, lng: json[i].Longitude };
-				var marker =
+				var markerOptions =
 				{
 					position: latlng,
 					map: map,
 					title: json[i].StopNo
 				}
-				var marker = new google.maps.Marker();
+				var marker = new google.maps.Marker(markerOptions);
 			}//for
 
 
