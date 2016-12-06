@@ -356,7 +356,7 @@ function geoFindMe() {
 	var output = $("#out");
 
 	if (!navigator.geolocation){
-		output.html("<p>Geolocation is not supported by your browser</p>");
+		output.html( "<p>Geolocation is not supported by your browser</p>");
 		return;
 	}
 
@@ -364,6 +364,16 @@ function geoFindMe() {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
+		output.html('<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
+
+		
+		<iframe
+			width="600"
+			height="450"
+			frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
+			&q=Space+Needle,Seattle+WA" allowfullscreen>
+		</iframe>
 	
 		// get bus stop# and coordinates
 		var routeNo = "";
@@ -392,16 +402,14 @@ function geoFindMe() {
 			// plot bus stop and current location
 			var img = new Image();
 			var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
+			img.src =
+				"https://maps.googleapis.com/maps/api/staticmap?"
+				+ "center=" + latitude + "," + longitude
+				+ "&zoom=15&size=300x300&maptpe=roadmap"
+				+ markerCoordinates
+				+ "&key=" + googleMapApi;
 
-			output.html(
-				"<iframe \
-					width=\"300\" \
-					height=\"300\" \
-					frameborder=\"0\" style=\"border:0\" \
-					src=\"https://www.google.com/maps/embed/v1/place?key=" + googleMapApi  + " \
-					&q=Space+Needle,Seattle+WA\" allowfullscreen> \
-				</iframe>"
-			);
+			output.appendChild(img);
 		}//test
 
 		$.getJSON( busStopURL, test )
