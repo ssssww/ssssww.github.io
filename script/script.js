@@ -380,9 +380,9 @@ function geoFindMe() {
 
 		var currCoordinate = 
 			"&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
-		var stopCoordinate = 
-			"&markers=color:red%7Clabel:" + stopNum + "%7C"
-			+ latitude + "," + longitude
+//		var stopCoordinate = 
+//			"&markers=color:red%7Clabel:" + stopNum + "%7C"
+//			+ latitude + "," + longitude
 
 		// make this more useful
 		var test = function( json )
