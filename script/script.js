@@ -431,7 +431,7 @@ function geoFindMe() {
 
 
 				marker.addListener('click', function() {
-					infoWindow.open(map, marker);
+					this.infoWindow.open(map, marker);
 				});
 			}//for
 			
