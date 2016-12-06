@@ -385,7 +385,6 @@ function geoFindMe() {
 				var mapOptions = {
 					center: new google.maps.LatLng(latitude, longitude), 
 					zoom: 15,
-					maptype
 				}
 				var map = new google.maps.Map(mapCanvas, mapOptions);
 			}//map
