@@ -1,5 +1,4 @@
 //java script
-gle.maps.Size(71, 71)
 
 //so lonely without it
 function main()
