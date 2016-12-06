@@ -353,18 +353,16 @@ function returnOnEnter( keyStroke )
 //retrieve geolocation
 
 function geoFindMe() {
-	var output = document.getElementById("out");
+	var output = $("#out");
 
 	if (!navigator.geolocation){
-		output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+		output.html("<p>Geolocation is not supported by your browser</p>");
 		return;
 	}
 
 	function success(position) {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
-
-		output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 
 	
 		// get bus stop# and coordinates
@@ -388,33 +386,22 @@ function geoFindMe() {
 			{
 				markerCoordinates +=
 					"&markers=icon:https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=ski|bb|Wheeee!|FFFFFF|000000"
-
-					
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-					//+"chst=d_map_spin%26chld=2.1%7C0%7CFFFF42%7C13%7Cb%7CKumquats";
-
-//http://maps.google.com/maps/api/staticmap?center=toulouse&sensor=false&zoom=6&size=400x400&markers=icon:http://chart.apis.google.com/chart%3Fchst%3Dd_map_spin%26chld%3D1%257C30%257CFFFFFF%257C10%257C_%257Cfoo%257Cbar|toulouse 
-
-				/*
-					"&markers=size:tiny%7Ccolor:green%7C"
-					+ "label:" + json[iter].StopNo + "%7C"
-					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-					*/
 			}//for
 			// plot bus stop and current location
 			var img = new Image();
 			var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
-			img.src =
-				"https://maps.googleapis.com/maps/api/staticmap?"
-				+ "center=" + latitude + "," + longitude
-				+ "&zoom=15&size=300x300&maptpe=roadmap"
-				+ markerCoordinates
-				+ "&key=" + googleMapApi;
 
-			console.log(markerCoordinates);
-
-			output.appendChild(img);
+			output.html(
+				"<iframe \
+					width=\"300\" \
+					height=\"300\" \
+					frameborder=\"0\" style=\"border:0\" \
+					src=\"https://www.google.com/maps/embed/v1/place?key=" + googleMapApi  + " \
+					&q=Space+Needle,Seattle+WA\" allowfullscreen> \
+				</iframe>"
+			);
 		}//test
 
 		$.getJSON( busStopURL, test )
