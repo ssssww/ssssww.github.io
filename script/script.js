@@ -396,7 +396,7 @@ function geoFindMe() {
 		{
 			var youAreHere = {"lat": latitude, "lng": longitude};
 			var mapOptions = {
-				zoom: 17,
+				zoom: 16,
 				center: youAreHere,
 				mapTypeId: 'roadmap'
 			};
