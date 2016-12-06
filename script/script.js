@@ -388,6 +388,7 @@ function geoFindMe() {
 		// make this more useful
 		function test(json)
 		{
+			var latlngx = {lat: latitude, lng: longitude}
 			var mapOptions = {
 				zoom: 15,
 				center: {lat: latitude, lng: longitude},
@@ -397,13 +398,11 @@ function geoFindMe() {
 			// need to add [0]; since it is expecting node not array or nodelist
 			var map = new google.maps.Map($('#map')[0], mapOptions);
 
-				var markerOptions =
-				{
-					position: {lat: latitude, lng: longitude},
-					map: map,
-					title: 'a' 
-				}
-				var marker = new google.maps.Marker(markerOptions);
+			var marker = new google.maps.Marker({
+				position: latlngx ,
+				map: map,
+				title: 'Hello World!'
+			});
 
 			//set markers
 			var len = json.length;
