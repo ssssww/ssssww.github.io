@@ -382,8 +382,8 @@ function geoFindMe() {
 		var cors = "https://cors-anywhere.herokuapp.com/";
 		var busStopURL =
 			cors + "http://api.translink.ca/rttiapi/v1/stops?apikey=" + transLinkApi
-			+ "&lat=" + latitude
-			+ "&long=" + longitude
+			+ "&lat=" + latitude.toFixed(6)
+			+ "&long=" + longitude.toFixed(6)
 			+ "&routeNo=";
 
 		var test = function( json ){ printJsonData( json);  }
