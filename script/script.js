@@ -384,7 +384,7 @@ function geoFindMe() {
 				var mapCanvas = $("#map");
 				var mapOptions = {
 					center: new google.maps.LatLng(latitude, longitude), 
-					zoom: 15,
+					zoom: 15
 				}
 				var map = new google.maps.Map(mapCanvas, mapOptions);
 			}//map
@@ -413,10 +413,10 @@ function geoFindMe() {
 	}
 
 	function error() {
-		output.innerHTML = "Unable to retrieve your location";
+		map.innerHTML = "Unable to retrieve your location";
 	}
 
-	output.innerHTML = "<p>Locating…</p>";
+	map.innerHTML = "<p>Locating…</p>";
 
 	navigator.geolocation.getCurrentPosition(success, error);
 }
