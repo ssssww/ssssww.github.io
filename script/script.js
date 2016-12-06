@@ -379,14 +379,14 @@ function geoFindMe() {
 
 		//start with coordinate of current location
 		var markerCoordinates = 
-			"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
+			"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude+"&markers=color:green%7glabel:" + json[0].StopNo +  "%7C" +json[0].Latitude + "," + json[0].Longitude;
 
 		// make this more useful
 		var test = function( json )
 		{
 			//printJsonData(json[0]);
 			var len = json.length;
-			for( var iter = 0; iter < len; iter++ )
+/*			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
 					"&markers=color:green%7C"
@@ -394,7 +394,7 @@ function geoFindMe() {
 					+ "label:" + "S" + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
-				alert(markerCoordinates);
+*/				alert(markerCoordinates);
 		}//test
 
 		$.getJSON( busStopURL, test )
