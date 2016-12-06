@@ -417,14 +417,17 @@ function geoFindMe() {
 					map: map,
 				}//markeroptions
 
-				var infowindow = new google.maps.InfoWindow();
+				var infowindow = new google.maps.InfoWindow({
+					content: String(json[i].StopNo);
+				});
 
-				google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
-							return function() {
-								infowindow.setContent(content);
-								infowindow.open(map,marker);
-							};
-							})(marker,String(json[i].StopNo),infowindow));
+				var marker = new google.maps.Marker({
+					position: uluru,
+					map: map
+				});
+				marker.addListener('click', function() {
+					infowindow.open(map, marker);
+				});
 			}//for
 			
 
