@@ -381,13 +381,15 @@ function geoFindMe() {
 		function test(json)
 		{
 			var len = json.length;
+			var label = 'A';
 			//start with coordinate of current location
 			var markerCoordinates = "&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
 			for( var iter = 0; iter < len; iter++ )
 			{
 				markerCoordinates +=
-					"&markers=size:tiny%7Ccolor:green%7C"
-					+ "label:" + json[iter].StopNo + "%7C"
+					"&markers=size:mid%7Ccolor:green%7C"
+					//+ "label:" + json[iter].StopNo + "%7C"
+					+ "label:" + label++ + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
 			// plot bus stop and current location
