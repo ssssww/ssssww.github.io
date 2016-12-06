@@ -398,7 +398,7 @@ function geoFindMe() {
 			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 			*/
 
-			map.append(googleMapAPICAllback);
+			map.append(googleMapAPICallback);
 		}//test
 
 		$.getJSON( busStopURL, test )
