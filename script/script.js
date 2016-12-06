@@ -382,23 +382,22 @@ function geoFindMe() {
 			//"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
 
 		// make this more useful
-		function test( json )
+		function test( json, markerCoordinates )
 		{
 		//printJsonData(json[0]);
 			var len = json.length;
 			for( var iter = 0; iter < len; iter++ )
 			{
-				markerCoordinates +=
+				this.markerCoordinates +=
 					"&markers=color:green%7C"
 					//+ "label:" + json[iter].StopNo + "%7C"
 					+ "label:" + "S" + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
-			return markerCoordinates;
 		}//test
 
-		$.getJSON( busStopURL, test )
-			.fail( test  );
+		$.getJSON( busStopURL, test, markerCoordinates )
+			.fail( test, markerCoordinates  );
 
 		//busnum + coordinate
 		// get jsondata
