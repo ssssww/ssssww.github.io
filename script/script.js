@@ -393,13 +393,12 @@ function geoFindMe() {
 			var len = json.length;
 			for( var i = 0; i < len; i++ )
 			{
-				console.log("aaa");
-				latlng = { lat: json[iter].Latitude, lng: json[iter].Longitude };
+				latlng = { lat: json[i].Latitude, lng: json[i].Longitude };
 				var marker =
 				{
 					position: latlng,
 					map: map,
-					title: json[iter].StopNo
+					title: json[i].StopNo
 				}
 				var marker = new google.maps.Marker();
 			}//for
