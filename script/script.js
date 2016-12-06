@@ -392,15 +392,13 @@ function geoFindMe() {
 					"&markers=color:green%7C"
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-				alert("aaa");
-				break;
 			}//for
+				alert(markerCoordinates);
 		}//test
 
 		$.getJSON( busStopURL, test )
 			.fail( test  );
 
-				alert(markerCoordinates);
 		//busnum + coordinate
 		// get jsondata
 		// parse it
