@@ -388,7 +388,7 @@ function geoFindMe() {
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
-			var mapx = new google.maps.Map($('#map'), mapOptions);
+			var mapx = new google.maps.Map($('#map')[0], mapOptions);
 			
 
 //			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
