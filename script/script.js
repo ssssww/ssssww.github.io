@@ -366,7 +366,7 @@ function geoFindMe() {
 		map.height("0.0vw");
 		return;
 	} else {
-		map.height("100.0vw");
+		map.height("40.0vw");
 	}//if/elseif/e
 
 	function success(position) {
