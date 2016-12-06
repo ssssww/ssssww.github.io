@@ -366,7 +366,7 @@ function geoFindMe() {
 		map.height("0.0vw");
 		return;
 	} else {
-		map.height("20.0vw");
+		map.height("100.0vw");
 	}//if/elseif/e
 
 	function success(position) {
@@ -412,7 +412,7 @@ function geoFindMe() {
 				fillOpacity: 0.35,
 				map: map,
 				center: youAreHere,
-				radius: 10
+				radius: 50
 			});
 
 			//set markers
