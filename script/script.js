@@ -384,6 +384,12 @@ function geoFindMe() {
 			+ "&long=" + longitude.toFixed(6)
 			+ "&routeNo=" + routeNo;
 
+		function setListener( marker, infoWindow, map)
+		{
+			marker.addListener('click', function() {
+				infoWindow.open(map, marker);
+			});
+		}//setlistener
 
 		// make this more useful
 		function test(json)
@@ -430,9 +436,7 @@ function geoFindMe() {
 				marker = new google.maps.Marker(markerOptions);
 
 
-				marker.addListener('click', function() {
-					this.infoWindow.open(map, marker);
-				});
+				setListener( marker, infoWindow, map);
 			}//for
 			
 
