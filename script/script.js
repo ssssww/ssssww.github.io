@@ -426,7 +426,7 @@ function geoFindMe() {
 				markerArray[i] = new google.maps.Marker(markerOptions);
 
 				marker.addListener('click', function() {
-					infowindow.open(map, marker);
+					infoWindowArray[i].open(map, markerArray[i]);
 				});
 			}//for
 			
