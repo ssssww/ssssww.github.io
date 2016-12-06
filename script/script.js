@@ -386,7 +386,7 @@ function geoFindMe() {
 					center: new google.maps.LatLng(latitude, longitude), 
 					zoom: 15
 				}
-				var map = new google.maps.Map(mapCanvas, mapOptions);
+				var mapx = new google.maps.Map(mapCanvas, mapOptions);
 			}//map
 			
 			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
