@@ -392,7 +392,7 @@ function geoFindMe() {
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 					//+"chst=d_map_spin%26chld=2.1%7C0%7CFFFF42%7C13%7Cb%7CKumquats";
 
-http://maps.google.com/maps/api/staticmap?center=toulouse&sensor=false&zoom=6&size=400x400&markers=icon:http://chart.apis.google.com/chart%3Fchst%3Dd_map_spin%26chld%3D1%257C30%257CFFFFFF%257C10%257C_%257Cfoo%257Cbar|toulouse 
+//http://maps.google.com/maps/api/staticmap?center=toulouse&sensor=false&zoom=6&size=400x400&markers=icon:http://chart.apis.google.com/chart%3Fchst%3Dd_map_spin%26chld%3D1%257C30%257CFFFFFF%257C10%257C_%257Cfoo%257Cbar|toulouse 
 
 				/*
 					"&markers=size:tiny%7Ccolor:green%7C"
