@@ -377,27 +377,37 @@ function geoFindMe() {
 			+ "&long=" + longitude.toFixed(6)
 			+ "&routeNo=" + routeNo;
 
-		//start with coordinate of current location
-		var markerCoordinates;// = 
-			//"&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
 
 		// make this more useful
-		function test( json, markerCoordinates )
+		function test(json)
 		{
-		//printJsonData(json[0]);
 			var len = json.length;
+			//start with coordinate of current location
+			var markerCoordinates = "&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
 			for( var iter = 0; iter < len; iter++ )
 			{
-				this.markerCoordinates +=
+				markerCoordinates +=
 					"&markers=color:green%7C"
-					//+ "label:" + json[iter].StopNo + "%7C"
-					+ "label:" + "S" + "%7C"
+					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
+			// plot bus stop and current location
+			var img = new Image();
+			var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
+			img.src =
+				"https://maps.googleapis.com/maps/api/staticmap?"
+				+ "center=" + latitude + "," + longitude
+				+ "&zoom=15&size=300x300&maptpe=roadmap"
+				+ markerCoordinates
+				+ "&key=" + googleMapApi;
+
+			console.log(markerCoordinates);
+
+			output.appendChild(img);
 		}//test
 
-		$.getJSON( busStopURL, test, markerCoordinates )
-			.fail( test, markerCoordinates  );
+		$.getJSON( busStopURL, test )
+			.fail( test );
 
 		//busnum + coordinate
 		// get jsondata
@@ -405,19 +415,6 @@ function geoFindMe() {
 		// make google map api url
 		// get static map image
 
-		// plot bus stop and current location
-		var img = new Image();
-		var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
-		img.src =
-			"https://maps.googleapis.com/maps/api/staticmap?"
-			+ "center=" + latitude + "," + longitude
-			+ "&zoom=15&size=300x300&maptpe=roadmap"
-			+ markerCoordinates
-			+ "&key=" + googleMapApi;
-
-	console.log(markerCoordinates);
-
-		output.appendChild(img);
 	}
 
 	function error() {
