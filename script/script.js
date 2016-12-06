@@ -353,11 +353,22 @@ function returnOnEnter( keyStroke )
 //retrieve geolocation
 
 function geoFindMe() {
+
 	//jquery won't print html in a single line
 	var map = $("#map");
 
+	if( map.style.height == "20.0vw" )
+	{
+		map.style.height = "0vw";
+		return;
+	} else {
+		map.style.height = "20.0vw";
+	}//if/e
+	
+
 	if (!navigator.geolocation) {
 		map.html("<p>Geolocation is not supported by your browser</p>");
+		map.style.height = "0vw";
 		return;
 	}//if
 
