@@ -362,13 +362,14 @@ function geoFindMe() {
 	}//if
 
 	function success(position) {
+		// get latitude and logitude using geolocation
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
 		map.html('<p>Latitude is ' + latitude + '°<br>Longitude is ' + longitude + '°</p>');
 		//some comment
  
-		// get bus stop# and coordinates
+		// get bus stop# and coordinates from translink
 		var routeNo = "";
 		var transLinkApi = "D6cuDlHX37i2uBtw4JqX";
 		var cors = "https://fierce-citadel-24828.herokuapp.com/";
@@ -387,7 +388,7 @@ function geoFindMe() {
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
-			var mapx = new google.maps.Map($('#map'), mapOptions);
+			var mapx = new google.maps.Map(document.getElementById('map'), mapOptions);
 			
 
 			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
