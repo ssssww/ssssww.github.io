@@ -384,7 +384,7 @@ function geoFindMe() {
 		// make this more useful
 		var test = function( json )
 		{
-			printJsonData(json[0]);
+			//printJsonData(json[0]);
 			var len = json.length;
 			for( var iter = 0; iter < len; iter++ )
 			{
@@ -392,6 +392,8 @@ function geoFindMe() {
 					"&markers=color:green%7C"
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
+				alert("aaa");
+				break;
 			}//for
 		}//test
 
