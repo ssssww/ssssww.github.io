@@ -365,11 +365,42 @@ function geoFindMe() {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
-		output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+		//output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 
-		
-		var img = new Image();
+	
+		// get bus stop# and coordinates
+		var routeNo = "";
 		var transLinkApi = "D6cuDlHX37i2uBtw4JqX";
+		var cors = "https://fierce-citadel-24828.herokuapp.com/";
+		var busStopURL =
+			cors + "http://api.translink.ca/rttiapi/v1/stops?apikey=" + transLinkApi
+			+ "&lat=" + latitude.toFixed(6)
+			+ "&long=" + longitude.toFixed(6)
+			+ "&routeNo=" + routeNo;
+
+		var currCoordinate = 
+			"&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
+		var stopCoordinate = 
+			"&markers=color:red%7Clabel:" + stopNum + "%7C"
+			+ latitude + "," + longitude
+
+		// make this more useful
+		var test = function( json )
+		{
+			printJsonData(json.Stops);
+		}//test
+
+		$.getJSON( busStopURL, test )
+			.fail( test  );
+
+		//busnum + coordinate
+		// get jsondata
+		// parse it
+		// make google map api url
+		// get static map image
+
+		// plot bus stop and current location
+		var img = new Image();
 		var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 		img.src =
 			"https://maps.googleapis.com/maps/api/staticmap?"
@@ -378,22 +409,6 @@ function geoFindMe() {
 			+ "&markers=color:red%7Clabel:C%7C" + latitude + "," + longitude
 			+ "&key=" + googleMapApi;
 
-		//var cors = "https://fierce-citadel-24828.herokuapp.com/";
-		var cors = "https://cors-anywhere.herokuapp.com/";
-		var busStopURL =
-			cors + "http://api.translink.ca/rttiapi/v1/stops?apikey=" + transLinkApi
-			+ "&lat=" + latitude.toFixed(6)
-			+ "&long=" + longitude.toFixed(6)
-			+ "&routeNo=";
-
-		var test = function( json ){ printJsonData( json);  }
-		$.getJSON( busStopURL, test )
-			.fail( test  );
-		//busnum + coordinate
-		// get jsondata
-		// parse it
-		// make google map api url
-		// get static map image
 
 		output.appendChild(img);
 	}
