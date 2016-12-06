@@ -404,12 +404,16 @@ function geoFindMe() {
 			// need to add [0]; since it is expecting node not array or nodelist
 			var map = new google.maps.Map($('#map')[0], mapOptions);
 
-			var currentMarker = 
-			{
-				position: youAreHere,
+			new google.maps.Circle({
+				strokeColor: '#FFFF00',
+				strokeOpacity: 0.8,
+				strokeWeight: 1,
+				fillColor: '#FF0000',
+				fillOpacity: 0.35,
 				map: map,
-			};
-			var marker = new google.maps.Marker(currentMarker);
+				center: youAreHere,
+				radius: 1vw
+			});
 
 			//set markers
 			var len = json.length;
