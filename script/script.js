@@ -388,7 +388,7 @@ function geoFindMe() {
 				center: {lat: latitude, lng: longitude},
 				mapTypeId: 'roadmap'
 			};
-			var mapx = new google.maps.Map(document.getElementById('map'), mapOptions);
+			var mapx = new google.maps.Map($('#map'), mapOptions);
 			
 
 			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
@@ -398,6 +398,8 @@ function geoFindMe() {
 				\"https://maps.googleapis.com/maps/api/js?"+ googleMapAPI
 				+"&callback=busMap\">\
 				</script>";
+
+			google.maps.event.addDomListener(window, "load", initialize);
 
 			map.append(googleMapAPICallback);
 			
