@@ -366,6 +366,7 @@ function geoFindMe() {
 		var longitude = position.coords.longitude;
 
 		map.innerHTML = '<p>Latitude is ' + latitude + '°<br>Longitude is ' + longitude + '°</p>';
+		//some comment
  
 		// get bus stop# and coordinates
 		var routeNo = "";
