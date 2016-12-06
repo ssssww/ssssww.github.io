@@ -363,9 +363,11 @@ function geoFindMe() {
 		return;
 	} else if( map.height() != 0 )
 	{
+		$("locateStops").text( "Nearby Bus Stops (show map)"  );
 		map.height("0.0vw");
 		return;
 	} else {
+		$("locateStops").text( "Nearby Bus Stops (hide map)"  );
 		map.height("30.0vw");
 	}//if/elseif/e
 
