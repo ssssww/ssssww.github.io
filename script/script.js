@@ -416,8 +416,7 @@ function geoFindMe() {
 				{
 					position: latlng,
 					map: map,
-					title: json[i].StopNo,
-					size: new google.maps.Size(71, 71) 
+					title: json[i].StopNo
 				}
 				var marker = new google.maps.Marker(markerOptions);
 
