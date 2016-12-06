@@ -418,7 +418,7 @@ function geoFindMe() {
 			+ markerCoordinates
 			+ "&key=" + googleMapApi;
 
-			alert(img.src);
+	$("jsonFull").text(img.src);
 
 		output.appendChild(img);
 	}
