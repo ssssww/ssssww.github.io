@@ -409,24 +409,29 @@ function geoFindMe() {
 			var len = json.length;
 			var infoWindowArray = new Array(len);
 			var markerArray = new Array(len);
-			console.log(len);
+
 			for( var i = 0; i < len; i++ )
 			{
-				latlng = { "lat": json[i].Latitude, "lng": json[i].Longitude };
+				jsonVal = json[i];
+				marker = markerArray[i];
+				infoWindow = infoWindowArary[i];
+
+				latlng = { "lat": jsonVal.Latitude, "lng": jsonVal.Longitude };
 				var markerOptions =
 				{
 					position: latlng,
-					map: map,
+					map: map
 				}//markeroptions
 
-				infoWindowArray[i] = new google.maps.InfoWindow({
-					content: String(json[i].StopNo)
+				infoWindow = new google.maps.InfoWindow({
+					content: String(jsonVal.StopNo)
 				});
 
-				markerArray[i] = new google.maps.Marker(markerOptions);
+				marker = new google.maps.Marker(markerOptions);
+
 
 				marker.addListener('click', function() {
-					infoWindowArray[i].open(map, markerArray[i]);
+					infoWindow.open(map, marker);
 				});
 			}//for
 			
