@@ -400,7 +400,7 @@ function geoFindMe() {
 				+ markerCoordinates
 				+ "&key=" + googleMapApi;
 
-			output.appendChild(img);
+			output.append(img);
 		}//test
 
 		$.getJSON( busStopURL, test )
