@@ -414,7 +414,7 @@ function geoFindMe() {
 				fillOpacity: 0.35,
 				map: map,
 				center: youAreHere,
-				radius: 50
+				radius: 30
 			});
 
 			//set markers
