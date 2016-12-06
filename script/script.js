@@ -390,7 +390,7 @@ function geoFindMe() {
 					"&markers=size:tiny%7Ccolor:green%7C"
 					+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-					+"chst=d_map_spin" + "&"  + "chld=2.1|0|FFFF42|13|b|Kumquats";
+					+"chst=d_map_spin%26chld=2.1|0|FFFF42|13|b|Kumquats";
 
 				/*
 					"&markers=size:tiny%7Ccolor:green%7C"
