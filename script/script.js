@@ -353,10 +353,10 @@ function returnOnEnter( keyStroke )
 //retrieve geolocation
 
 function geoFindMe() {
-	var output = $("#out");
+	var map = $("#map");
 
 	if (!navigator.geolocation){
-		output.html( "<p>Geolocation is not supported by your browser</p>");
+		map.html( "<p>Geolocation is not supported by your browser</p>");
 		return;
 	}
 
@@ -364,7 +364,7 @@ function geoFindMe() {
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 
-		output.html('<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
+		map.html('<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
 
 		// get bus stop# and coordinates
 		var routeNo = "";
@@ -380,29 +380,26 @@ function geoFindMe() {
 		// make this more useful
 		function test(json)
 		{
+			function busMap() {
+				var mapCanvas = $("#map");
+				var mapOptions = {
+					center: new google.maps.LatLng(latitude, longitude), 
+					zoom: 15,
+					maptype
+				}
+				var map = new google.maps.Map(mapCanvas, mapOptions);
+			}//map
+			
+			var googleMapAPICallback = "<script src=\"https://maps.googleapis.com/maps/api/js?callback=busMap\"></script>"
+			
+				/*
 			var len = json.length;
-			var label = 'A';
-			//start with coordinate of current location
-			var markerCoordinates = "&markers=color:red%7Clabel:" + "home" +  "%7C" + latitude + "," + longitude;
-			for( var iter = 0; iter < len; iter++ )
-			{
-				markerCoordinates +=
-					"&markers=size:mid%7Ccolor:green%7C"
 					//+ "label:" + json[iter].StopNo + "%7C"
-					+ "label:" + label++ + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-			}//for
-			// plot bus stop and current location
-			var img = new Image();
-			var googleMapApi = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
-			img.src =
-				"https://maps.googleapis.com/maps/api/staticmap?"
-				+ "center=" + latitude + "," + longitude
-				+ "&zoom=15&size=300x300&maptpe=roadmap"
-				+ markerCoordinates
-				+ "&key=" + googleMapApi;
+			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
+			*/
 
-			output.append(img);
+			map.append(googleMapAPICAllback);
 		}//test
 
 		$.getJSON( busStopURL, test )
