@@ -407,6 +407,8 @@ function geoFindMe() {
 
 			//set markers
 			var len = json.length;
+			var infoWindowArray = new Array(len);
+			var markerArray = new Array(len);
 			console.log(len);
 			for( var i = 0; i < len; i++ )
 			{
@@ -417,11 +419,12 @@ function geoFindMe() {
 					map: map,
 				}//markeroptions
 
-				var infowindow = new google.maps.InfoWindow({
+				infoWindowArray[i] = new google.maps.InfoWindow({
 					content: String(json[i].StopNo)
 				});
 
-				var marker = new google.maps.Marker(markerOptions);
+				markerArray[i] = new google.maps.Marker(markerOptions);
+
 				marker.addListener('click', function() {
 					infowindow.open(map, marker);
 				});
