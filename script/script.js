@@ -389,13 +389,17 @@ function geoFindMe() {
 				var map = new google.maps.Map(mapCanvas, mapOptions);
 			}//map
 			
-			var googleMapAPICallback = "<script src=\"https://maps.googleapis.com/maps/api/js?callback=busMap\"></script>"
+			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
+			var googleMapAPICallback = 
+				"<script src=\
+				\"https://maps.googleapis.com/maps/api/js?"+ googleMapAPI
+				+"&callback=busMap\">\
+				</script>";
 			
 				/*
 			var len = json.length;
 					//+ "label:" + json[iter].StopNo + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
-			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
 			*/
 
 			map.append(googleMapAPICallback);
