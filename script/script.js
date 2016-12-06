@@ -398,13 +398,12 @@ function geoFindMe() {
 			// need to add [0]; since it is expecting node not array or nodelist
 			var map = new google.maps.Map($('#map')[0], mapOptions);
 
-			var xx = 
+			var currentMarker = 
 			{
 				position: youAreHere,
 				map: map,
-				title: 'Hello World!'
 			};
-			var marker = new google.maps.Marker(xx);
+			var marker = new google.maps.Marker(currentMarker);
 
 			//set markers
 			var len = json.length;
@@ -416,13 +415,12 @@ function geoFindMe() {
 				{
 					position: latlng,
 					map: map,
-					title: json[i].StopNo
 				}//markeroptions
 
 				var marker = new google.maps.Marker(markerOptions);
 
 				var infowindow = new google.maps.InfoWindow({
-					content: ""
+					content: json[i].StopNo
 				});
 
 				marker.addListener('click', function() {
