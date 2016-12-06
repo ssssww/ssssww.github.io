@@ -361,7 +361,7 @@ function geoFindMe() {
 
 	if (!navigator.geolocation) {
 		map.html("<p>Geolocation is not supported by your browser</p>");
-		map..height("0.0vw");
+		map.height("0.0vw");
 		return;
 	} else if( map.height() == "20.0vw" )
 	{
