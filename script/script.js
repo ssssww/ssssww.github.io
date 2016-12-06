@@ -396,7 +396,7 @@ function geoFindMe() {
 					+ "label:" + "S" + "%7C"
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			}//for
-*/				alert(markerCoordinates);
+*/
 		}//test
 
 		$.getJSON( busStopURL, test )
@@ -417,6 +417,8 @@ function geoFindMe() {
 			+ "&zoom=15&size=300x300&maptpe=roadmap"
 			+ markerCoordinates
 			+ "&key=" + googleMapApi;
+
+			alert(img.src);
 
 		output.appendChild(img);
 	}
