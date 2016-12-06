@@ -380,21 +380,25 @@ function geoFindMe() {
 		// make this more useful
 		function test(json)
 		{
-			function busMap() {
-				var mapCanvas = $("#map");
-				var mapOptions = {
-					center: new google.maps.LatLng(latitude, longitude), 
-					zoom: 15
-				}
-				var mapx = new google.maps.Map(mapCanvas, mapOptions);
-			}//map
+			var centerLatlng = new google.maps.LatLng(latitude, longitude);
+			var mapOptions = {
+				zoom: 8,
+				center: centerLatlng,
+				mapTypeId: 'roadmap'
+			};
+			var mapx = new google.maps.Map(map,
+					    mapOptions);
 			
+
 			var googleMapAPI = "AIzaSyBK8dWP_CilHBITIsK3Z_oTTVZCN1r_xLM";
+
 			var googleMapAPICallback = 
-				"<script src=\
+				"<script async defer src=\
 				\"https://maps.googleapis.com/maps/api/js?"+ googleMapAPI
 				+"&callback=busMap\">\
 				</script>";
+
+			map.append(googleMapAPICallback);
 			
 				/*
 			var len = json.length;
@@ -402,7 +406,6 @@ function geoFindMe() {
 					+ json[iter].Latitude.toFixed(6) + "," + json[iter].Longitude.toFixed(6);
 			*/
 
-			map.append(googleMapAPICallback);
 		}//test
 
 		$.getJSON( busStopURL, test )
