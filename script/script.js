@@ -357,14 +357,11 @@ function geoFindMe() {
 	//jquery won't print html in a single line
 	var map = $("#map");
 
-	
-	console.log(map.height());
-
 	if (!navigator.geolocation) {
 		map.html("<p>Geolocation is not supported by your browser</p>");
 		map.height("0.0vw");
 		return;
-	} else if( map.height() == "20.0vw" )
+	} else if( map.height() == 16 )
 	{
 		map.height("0.0vw");
 		return;
@@ -400,13 +397,13 @@ function geoFindMe() {
 			// need to add [0]; since it is expecting node not array or nodelist
 			var map = new google.maps.Map($('#map')[0], mapOptions);
 
-				var marker =
+				var markerOptions =
 				{
 					position: {lat: latitude, lng: longitude},
 					map: map,
 					title: 'a' 
 				}
-				var marker = new google.maps.Marker();
+				var marker = new google.maps.Marker(markerOptions);
 
 			//set markers
 			var len = json.length;
