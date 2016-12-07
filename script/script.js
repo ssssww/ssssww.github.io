@@ -440,14 +440,9 @@ function geoFindMe() {
 				}//markeroptions
 
 				var info = ""
-					+ jsonVal.StopNo
-					+ '<br>'
-					+ jsonVal.Name
-					+ '<br>'
-					+ jsonVal.OnStreet
-					+ '<br>'
-					+ jsonVal.AtStreet
-					+ '<br>'
+					+ "# "jsonVal.StopNo + '<br>'
+					+ "@ " + jsonVal.OnStreet + '<br>'
+					+ "& " + jsonVal.AtStreet + '<br>'
 					+ jsonVal.Routes;
 
 				var infoWindow = new google.maps.InfoWindow({
