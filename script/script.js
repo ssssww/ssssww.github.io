@@ -420,7 +420,7 @@ function geoFindMe() {
 				fillOpacity: 0.35,
 				map: map,
 				center: youAreHere,
-				radius: 30
+				radius: 20
 			});
 
 			//set markers
