@@ -226,7 +226,7 @@ function BusStopInfo()
 
 	//if bus stop is invalid, do nothing
 	var reg5Digit = new RegExp(/^\d{5}$/);
-	if( !busStopNumber.test(reg5Digit) ){
+	if( !reg5Digit.test(busStopNumber) ){
 		return ;
 	}//if
 
