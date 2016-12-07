@@ -440,10 +440,10 @@ function geoFindMe() {
 				}//markeroptions
 
 				var info = ""
-					+ "# " + jsonVal.StopNo + '<br>'
-					+ "@ " + jsonVal.OnStreet + '<br>'
-					+ "& " + jsonVal.AtStreet + '<br>'
-					+ jsonVal.Routes;
+					+ htmlString("b", "# ") + jsonVal.StopNo + '<br>'
+					+ htmlString("b", "@ ") + jsonVal.OnStreet + '<br>'
+					+ htmlString("b", "& ") + jsonVal.AtStreet + '<br>'
+					+ htmlString("b", jsonVal.Routes);
 
 				var infoWindow = new google.maps.InfoWindow({
 					content: info
