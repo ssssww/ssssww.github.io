@@ -436,7 +436,8 @@ function geoFindMe() {
 				var markerOptions =
 				{
 					position: latlng,
-					map: map
+					map: map,
+					color: green
 				}//markeroptions
 
 				var info = ""
