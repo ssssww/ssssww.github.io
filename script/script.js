@@ -439,8 +439,19 @@ function geoFindMe() {
 					map: map
 				}//markeroptions
 
+				var info = ""
+					+ jsonVal.StopNo
+					+ '<br>'
+					+ jsonVal.Name
+					+ '<br>'
+					+ jsonVal.OnStreet
+					+ '<br>'
+					+ jsonVal.AtStreet
+					+ '<br>'
+					+ jsonVal.Routes;
+
 				var infoWindow = new google.maps.InfoWindow({
-					content: String(jsonVal.StopNo)
+					content: info
 				});
 
 				var marker = new google.maps.Marker(markerOptions);
